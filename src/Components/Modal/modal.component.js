@@ -12,7 +12,7 @@ export function CheckOutModal(props) {
     console.log(props.hey)
     return (
         <>
-            <Button variant="primary" onClick={handleShow}>
+            <Button variant="primary" style={{ margin: "0 auto" }} onClick={handleShow}>
                 Bej porosi
             </Button>
 
@@ -25,10 +25,10 @@ export function CheckOutModal(props) {
                         <Form.Label>Detaje dergimi</Form.Label>
                         <Form.Row style={mystyle}>
                             <Col>
-                                <Form.Control value={props.hey.Emer} placeholder="Emer" />
+                                <Form.Control value={props.hey.Emer} readOnly placeholder="Emer" />
                             </Col>
                             <Col>
-                                <Form.Control value={props.hey.Mbiemer} placeholder="Mbiemer" />
+                                <Form.Control value={props.hey.Mbiemer} readOnly placeholder="Mbiemer" />
                             </Col>
                         </Form.Row>
                         <Form.Row style={mystyle}>
@@ -88,17 +88,17 @@ export function CheckOutModal(props) {
                                 </Form.Control>
                             </Col>
                         </Form.Row>
-                        <div class="form-group">
-                            <div class="col-md-12">
+                        <div className="form-group">
+                            <div className="col-md-12">
                                 <span>Pay secure using your credit card.</span>
                             </div>
-                            <div class="col-md-12">
-                                <ul class="cards">
-                                    <li class="visa hand">Visa</li>
-                                    <li class="mastercard hand">MasterCard</li>
-                                    <li class="amex hand">Amex</li>
+                            <div className="col-md-12">
+                                <ul className="cards">
+                                    <li className="visa hand">Visa</li>
+                                    <li className="mastercard hand">MasterCard</li>
+                                    <li className="amex hand">Amex</li>
                                 </ul>
-                                <div class="clearfix"></div>
+                                <div className="clearfix"></div>
                             </div>
                         </div>
                     </Form>
