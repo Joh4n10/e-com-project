@@ -9,7 +9,7 @@ export function CheckOutModal(props) {
     const mystyle = {
         padding: "10px"
     };
-    console.log(props.hey)
+    // console.log(props.hey)
     return (
         <>
             <Button variant="primary" style={{ margin: "0 auto" }} onClick={handleShow}>

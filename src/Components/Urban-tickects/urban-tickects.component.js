@@ -10,9 +10,13 @@ export class UrbanTickets extends React.Component {
             Emer: '',
             Mbiemer: '',
             Kategoria: '',
+            Zona: '',
+            Cmimi: null
 
         }
     }
+
+    categoryOptions = ['Femije', 'PAK', 'Te rritur', 'Te moshuar']
 
     componentDidMount() {
         fetch("http://localhost:4000/home")
@@ -46,27 +50,31 @@ export class UrbanTickets extends React.Component {
                     <Form>
                         <InputGroup className="mb-3">
                             <InputGroup.Prepend>
-                                <InputGroup.Text >First and last name</InputGroup.Text>
+                                <InputGroup.Text >Klienti</InputGroup.Text>
                             </InputGroup.Prepend>
                             <FormControl
-                                placeholder="Recipient's username"
+                                placeholder="Emer"
                                 aria-label="Amount (to the nearest dollar)"
                                 name="Emer" onChange={this.HandleFormChange}
                             />
                             <FormControl
-                                placeholder="Recipient's username"
+                                placeholder="Mbiemer"
                                 aria-label="Amount (to the nearest dollar)"
                                 name="Mbiemer" onChange={this.HandleFormChange}
                             />
                             <Form.Control as='select'
-                                name="Kategori" onChange={this.HandleFormChange}>
-                                <option>Johan</option>
+                                name="Kategoria" onChange={this.HandleFormChange}>
+                                <option>Kategoria</option>
+                                {this.categoryOptions.map((el) => <option key={el} value={el}>{el}</option>)}
+                            </Form.Control>
+                            <Form.Control as='select'
+                                name="Zona" onChange={this.HandleFormChange}>
+                                <option>Zona</option>
                                 <option>gf</option>
                             </Form.Control>
-
                             <InputGroup.Append>
                                 <InputGroup.Text>$</InputGroup.Text>
-                                <InputGroup.Text>0.00</InputGroup.Text>
+                                <InputGroup.Text>{this.state.Cmimi}</InputGroup.Text>
                             </InputGroup.Append>
                         </InputGroup>
                     </Form>
@@ -79,7 +87,15 @@ export class UrbanTickets extends React.Component {
     HandleFormChange = (event) => {
         let StateName = event.target.name
         let StateValue = event.target.value
-        this.setState({ [StateName]: StateValue })
+        this.setState({ [StateName]: StateValue }, () => {
+            if (this.state.Kategoria && this.state.Zona) {
+                this.setState({
+                    Cmimi: 20
+                })
+            }
+        })
+        console.table(this.state)
+
     }
 
 }
