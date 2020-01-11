@@ -18,17 +18,17 @@ export function CheckOutModal(props) {
 
             <Modal size='lg' show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Pagese per{/*emri i produktit*/} </Modal.Title>
+                    <Modal.Title>Pagese per {props.obj.Kategoria + " " + props.obj.Zona} </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Form>
                         <Form.Label>Detaje dergimi</Form.Label>
                         <Form.Row style={mystyle}>
                             <Col>
-                                <Form.Control value={props.hey.Emer} readOnly placeholder="Emer" />
+                                <Form.Control value={props.obj.Emer} readOnly placeholder="Emer" />
                             </Col>
                             <Col>
-                                <Form.Control value={props.hey.Mbiemer} readOnly placeholder="Mbiemer" />
+                                <Form.Control value={props.obj.Mbiemer} readOnly placeholder="Mbiemer" />
                             </Col>
                         </Form.Row>
                         <Form.Row style={mystyle}>
