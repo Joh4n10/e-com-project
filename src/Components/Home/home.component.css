@@ -78,3 +78,61 @@ padding: 60px;
     background: linear-gradient(45deg, rgba(255,193,7,1) 0%, rgba(255,87,34,1) 100%);
     box-shadow: 0 0 20px 0 rgba(0,0,0,.9);
   }
+
+  .linja{
+    margin-top: 20px;
+    padding: 20px;
+  border-radius: 10px 10px 10px 10px;
+    background-color:white;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+ 
+  }
+
+  .qyteti {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: "Arial", sans-serif;
+    color: #333;
+    line-height: 1.42857143;
+  }
+
+.stacioni {
+  padding-top: 3px;
+  font-weight: 700;
+  color: #666;
+  font-size: 12px;
+  line-height: 1.42857143;
+}
+
+.destinacioni {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "Arial", sans-serif;
+  color: #333;
+  line-height: 1.42857143;
+
+}
+
+.stacioniD {
+  padding-top: 3px;
+  font-weight: 700;
+  color: #666;
+  font-size: 12px;
+  line-height: 1.42857143;
+}
+
+.bli {
+  font-family: serif;
+  color: white;
+  margin-top: 10px;
+  width: 130px;
+  height: 50px;
+  background: rgba(255,193,7,1);
+  background: -moz-linear-gradient(45deg, rgba(255,193,7,1) 0%, rgba(255,87,34,1) 100%);
+  background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(255,193,7,1)), color-stop(100%, rgba(255,87,34,1)));
+  background: -webkit-linear-gradient(45deg, rgba(255,193,7,1) 0%, rgba(255,87,34,1) 100%);
+  background: -o-linear-gradient(45deg, rgba(255,193,7,1) 0%, rgba(255,87,34,1) 100%);
+  background: -ms-linear-gradient(45deg, rgba(255,193,7,1) 0%, rgba(255,87,34,1) 100%);
+  background: linear-gradient(45deg, rgba(255,193,7,1) 0%, rgba(255,87,34,1) 100%);
+  box-shadow: 0 0 20px 0 rgba(0,0,0,.4);
+}
