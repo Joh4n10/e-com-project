@@ -2,8 +2,8 @@ import React from 'react';
 import '../../App.css';
 import '../Home/home.component.css';
 import { Button } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 
-import { Row, Card, Col } from 'react-bootstrap'
 export class BusCard extends React.Component {
 
     constructor(props) {

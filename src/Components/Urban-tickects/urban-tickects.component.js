@@ -1,8 +1,8 @@
 import React from 'react'
 import { InputGroup, FormControl, Form, Container, Row } from 'react-bootstrap'
 import { CheckOutModal } from '../Modal/modal.component';
-import { BaseRequest } from '../../Services/base-request.service';
 import Jumbotron from 'react-bootstrap/Jumbotron'
+import { UrbanService } from '../../Services/urban-handle.service';
 export class UrbanTickets extends React.Component {
 
     constructor(props) {
@@ -16,7 +16,7 @@ export class UrbanTickets extends React.Component {
 
         }
     }
-    Requests = new BaseRequest()
+    Requests = new UrbanService()
 
     categoryOptions = ['Femije', 'PAK', 'Te rritur', 'Te moshuar']
     zoneOptions = ['Durres', 'Durres-rethina', 'etj']
@@ -95,7 +95,7 @@ export class UrbanTickets extends React.Component {
         let StateValue = event.target.value
         this.setState({ [StateName]: StateValue }, () => {
             if (this.state.Kategoria && this.state.Zona) {
-                this.Requests.getData({
+                this.Requests.getUrbanData({
                     zona: this.state.Zona,
                     kategoria: this.state.Kategoria
                 }).then((res, rej) => {

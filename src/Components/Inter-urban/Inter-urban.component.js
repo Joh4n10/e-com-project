@@ -5,9 +5,16 @@ import { InputGroup, Form, Jumbotron, Row, Container } from 'react-bootstrap'
 import { BusCard } from '../bus-card/bus-card.component';
 export class InterUrban extends React.Component {
 
-    // constructor() {
-    //     super()
-    // }
+    constructor(props) {
+        super(props)
+        this.state = {
+            Nisja: '',
+            Destinacioni: '',
+            BusCards: [],
+
+
+        }
+    }
 
     HandleFormChange = (event) => {
         let StateName = event.target.name
@@ -28,12 +35,12 @@ export class InterUrban extends React.Component {
                         <InputGroup>
 
                             <Form.Control as='select'
-                                name="Zona" onChange={this.HandleFormChange}>
+                                name="Nisja" onChange={this.HandleFormChange}>
                                 <option>Nisja</option>
                             </Form.Control>
 
                             <Form.Control as='select'
-                                name="Zona" onChange={this.HandleFormChange}>
+                                name="Destinacioni" onChange={this.HandleFormChange}>
                                 <option>Destinacioni</option>
                             </Form.Control>
                         </InputGroup>

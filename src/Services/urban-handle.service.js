@@ -1,9 +1,14 @@
-export class BaseRequest {
+import { BaseRequest } from './base-request.service';
+import { Utils } from './utils';
 
-    // constructor() { }
+export class UrbanService extends BaseRequest {
 
-    url = "http://localhost:4000/";
-    endpoint = '/'
+    constructor() {
+        super()
+        this.endpoint = 'urban'
+    }
+
+
     async postData(data = {}) {
         // Default options are marked with *
         const response = await fetch(this.url, {
@@ -19,9 +24,10 @@ export class BaseRequest {
         });
         return await response.json(); // parses JSON response into native JavaScript objects
     }
-    async getData(params) {
-        const res = await fetch(this.url + this.endpoint + "?" + params);
-        return res.json();
+    async getUrbanData(paramsObj) {
+        const params = Utils.seriliseParams(paramsObj)
+        const res = await this.getData(params);
+        return res;
     }
 
 }
