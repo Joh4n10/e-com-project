@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../App.css';
 import '../Home/home.component.css';
-import {Button} from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 import { Row, Card, Col } from 'react-bootstrap'
 export class BusCard extends React.Component {
@@ -10,7 +10,7 @@ export class BusCard extends React.Component {
         super()
 
     }
-  
+
 
 
     render() {
@@ -24,27 +24,27 @@ export class BusCard extends React.Component {
             //             <footer className="blockquote-footer">
             //                 Nisja <cite title="Source Title">durres 12:00</cite>
             //             </footer>
-            
-          
-          
-                        <Row className='linja'>
-        <Col xs lg="2">
-        <img alt="as" src={require('../../Assets/alvavel.jpg')} style={{ width: "70%" }} />
-    </Col>
-    <Col lg={3} >
-   <span className='qyteti'>Durres 5:50</span>
-   <p className='stacioni'>Stacioni Trenit</p>            
-</Col> 
-    <Col xs={2}> <img alt="as" src={require('../../Assets/rating.png')} style={{ width: "70%" }}/></Col> 
-    <Col lg={3}> <span className='destinacioni'>Tirane 6:15</span>
-   <p className='stacioniD'>Terminali Nderkombetar i Autobusave</p>
-</Col>
-   <Col lg={2}>  <Button variant="warning" className='bli'>Bli Bileten</Button>
-</Col> 
 
-  </Row>
-  
-  
+
+
+            <Row className='linja'>
+                <Col xs lg="2">
+                    <img alt="as" src={require('../../Assets/alvavel.jpg')} style={{ width: "70%" }} />
+                </Col>
+                <Col lg={3} >
+                    <span className='qyteti'>Durres 5:50</span>
+                    <p className='stacioni'>Stacioni Trenit</p>
+                </Col>
+                <Col xs={2}> <img alt="as" src={require('../../Assets/rating.png')} style={{ width: "70%" }} /></Col>
+                <Col lg={3}> <span className='destinacioni'>Tirane 6:15</span>
+                    <p className='stacioniD'>Terminali Nderkombetar i Autobusave</p>
+                </Col>
+                <Col lg={2}>  <Button variant="warning" className='bli'>Bli Bileten</Button>
+                </Col>
+
+            </Row>
+
+
 
 
             //         {/* </Card.Body>
