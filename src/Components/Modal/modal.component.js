@@ -12,7 +12,7 @@ export function CheckOutModal(props) {
     // console.log(props.hey)
     return (
         <>
-            <Button variant="primary" style={{ margin: "0 auto" }} onClick={handleShow}>
+            <Button variant="primary" className='buton1' onClick={handleShow} >
                 Bej porosi
             </Button>
 

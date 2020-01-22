@@ -16,7 +16,7 @@ export class Home extends React.Component {
             <Container fluid >
                 <Jumbotron className='jmb'>
                     <h1 className='busticket'>BUS TICKET</h1>
-                    <h3 className="busticket1"> Rezervoni dhe blini online biletën tuaj të autobuzit shumë shpejtë dhe thjeshtë, kudo ku ndodheni brenda Shqipërisë.</h3>
+                    <h3 className="busticket1"> Rezervoni dhe blini online biletën tuaj të autobuzit shumë shpejtë dhe thjeshtë, kudo ku ndodheni në Shqipëri.</h3>
                     <Row className='buton'>
                         <Col xs={4}></Col>
                         <Col xs={2} >

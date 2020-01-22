@@ -2,6 +2,10 @@ import React from 'react'
 import { InputGroup, FormControl, Form, Container, Row } from 'react-bootstrap'
 import { CheckOutModal } from '../Modal/modal.component';
 import { BaseRequest } from '../../Services/base-request.service';
+import { Col } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
+
+
 import Jumbotron from 'react-bootstrap/Jumbotron'
 export class UrbanTickets extends React.Component {
 
@@ -48,13 +52,21 @@ export class UrbanTickets extends React.Component {
     render() {
 
         return (
-            < Container >
-                <Jumbotron fluid>
+            < Container fluid>
+                    <Jumbotron  className='jmb2' style={{  background: "rgb(173, 216, 230)" }} >
+                  <Row>
+               
+               <img alt="as" src={require('../../Assets/ticket.png')} style={{ width: "100%" }} />
+          </Row>
+            
+          
+
+              
                     <Row >
                         <Form style={{ margin: "0 auto" }}>
-                            <InputGroup className="mb-3">
+                            <InputGroup className='busticket3'>
                                 <InputGroup.Prepend>
-                                    <InputGroup.Text >Klienti</InputGroup.Text>
+                                    <InputGroup.Text>Klienti</InputGroup.Text>
                                 </InputGroup.Prepend>
                                 <FormControl
                                     placeholder="Emer"
@@ -86,6 +98,9 @@ export class UrbanTickets extends React.Component {
                     <Row><CheckOutModal obj={this.state} />
                     </Row>
                 </Jumbotron>
+                <h1 className='lol'  style={{ textAlign: "center " }}>Cooming Soon</h1>
+            <p className='lol1' style={{ textAlign: "center " }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
+            
             </ Container >
         );
     }
