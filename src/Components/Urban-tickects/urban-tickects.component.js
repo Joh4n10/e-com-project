@@ -1,8 +1,10 @@
 import React from 'react'
-import { InputGroup, FormControl, Form, Container, Row } from 'react-bootstrap'
+import { InputGroup, FormControl, Form, Container, Row, Button } from 'react-bootstrap'
 import { CheckOutModal } from '../Modal/modal.component';
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import { UrbanService } from '../../Services/urban-handle.service';
+import { Link } from 'react-router-dom';
+import { Utils } from '../../Services/utils';
 export class UrbanTickets extends React.Component {
 
     constructor(props) {
@@ -12,12 +14,12 @@ export class UrbanTickets extends React.Component {
             Mbiemer: '',
             Kategoria: '',
             Zona: '',
-            Cmimi: 0
+            Cmimi: 0,
+            purchaseUrl: ''
 
         }
     }
     Requests = new UrbanService()
-
     categoryOptions = ['Femije', 'PAK', 'Te rritur', 'Te moshuar']
     zoneOptions = ['Durres', 'Durres-rethina', 'etj']
 
@@ -43,7 +45,13 @@ export class UrbanTickets extends React.Component {
     //             }
     //         )
     // }
-
+    getUrl() {
+        return '/bli?' + Utils.seriliseParams({
+            zona: this.state.Zona,
+            kategoria: this.state.Kategoria, Emer: this.state.Emer,
+            Mbiemer: this.state.Mbiemer
+        })
+    }
 
     render() {
 
@@ -87,7 +95,10 @@ export class UrbanTickets extends React.Component {
                             </InputGroup>
                         </Form>
                     </Row>
-                    <Row><CheckOutModal obj={this.state} />
+                    <Row>
+                        <Button variant="primary" className='buton1'  ><Link style={{ textDecoration: 'none', color: 'inherit' }} to={this.getUrl()}> Bej porosi</Link>
+                        </Button>
+
                     </Row>
                 </Jumbotron>
                 <h1 className='lol' style={{ textAlign: "center " }}>Cooming Soon</h1>

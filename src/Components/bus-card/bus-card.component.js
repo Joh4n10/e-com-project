@@ -3,7 +3,7 @@ import '../../App.css';
 import '../Home/home.component.css';
 import { Button } from 'react-bootstrap';
 import { Row, Col } from 'react-bootstrap';
-
+import { Link } from 'react-router-dom'
 export class BusCard extends React.Component {
 
     constructor(props) {
@@ -29,7 +29,7 @@ export class BusCard extends React.Component {
                     <p className='stacioniD'>{this.props.vendMberritje}</p>
                 </Col>
                 <Col lg={2}>
-                    <Button variant="warning" className='bli'>Bli Bileten</Button>
+                    <Button variant="warning" className='bli'><Link style={{ textDecoration: 'none', color: 'inherit' }} to="/bli">Bli Bileten</Link></Button>
                 </Col>
 
             </Row>
@@ -39,4 +39,3 @@ export class BusCard extends React.Component {
 
 
 }
-
