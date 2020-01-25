@@ -3,7 +3,6 @@ export class BaseRequest {
     // constructor() { }
 
     url = "http://localhost:4000/";
-    endpoint = '/'
     async postData(data = {}) {
         // Default options are marked with *
         const response = await fetch(this.url, {
@@ -19,8 +18,8 @@ export class BaseRequest {
         });
         return await response.json(); // parses JSON response into native JavaScript objects
     }
-    async getData(params, endpoint = '') {
-        const res = await fetch(this.url + endpoint + this.endpoint + "?" + params);
+    async getData(endpoint, params) {
+        const res = await fetch(this.url + endpoint + "?" + params);
         return res.json();
     }
 

@@ -3,11 +3,6 @@ import { Utils } from './utils';
 
 export class InterUrbanService extends BaseRequest {
 
-    constructor() {
-        super()
-    }
-
-
     async postData(data = {}) {
         // Default options are marked with *
         const response = await fetch(this.url, {
@@ -25,18 +20,17 @@ export class InterUrbanService extends BaseRequest {
     }
     async getDeparturesData() {
         const params = ''
-        const res = await this.getData(params, 'inter-urban/departures');
+        const res = await this.getData('inter-urban/departures', params);
         return res;
     }
     async getArrivalsData() {
         const params = ''
-        const res = await this.getData(params, 'inter-urban/arrivals');
+        const res = await this.getData('inter-urban/arrivals', params);
         return res;
     }
     async getBusList(paramsObj) {
-        this.url += 'inter-urban/list'
         const params = Utils.seriliseParams(paramsObj)
-        const res = await this.getData(params);
+        const res = await this.getData('inter-urban/list', params);
         return res;
     }
 

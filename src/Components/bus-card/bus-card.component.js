@@ -21,11 +21,11 @@ export class BusCard extends React.Component {
                     <img alt="as" src={require('../../Assets/alvavel.jpg')} style={{ width: "70%" }} />
                 </Col>
                 <Col lg={3} >
-                    <span className='qyteti'>{this.props.qytetNisje} 5:50</span>
+                    <span className='qyteti'>{this.props.qytetNisje} {this.props.koheNisje} </span>
                     <p className='stacioni'>{this.props.vendNisje}</p>
                 </Col>
                 <Col xs={2}> <img alt="as" src={require('../../Assets/rating.png')} style={{ width: "70%" }} /></Col>
-                <Col lg={3}> <span className='destinacioni'>{this.props.qytetMberritje} 6:15</span>
+                <Col lg={3}> <span className='destinacioni'>{this.props.qytetMberritje} {this.props.koheMberritje} </span>
                     <p className='stacioniD'>{this.props.vendMberritje}</p>
                 </Col>
                 <Col lg={2}>
