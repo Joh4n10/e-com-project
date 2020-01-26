@@ -10,27 +10,39 @@ function useQuery() {
     return new URLSearchParams(useLocation().search);
 }
 
-export function PurchaseComponent(props) {
+function showPurchaseDesc(zona, kategoria, qytetNisje, qytetMberritje) {
+    console.log(zona);
+
+    if (kategoria && zona) {
+        return <h4>Pagese per abone ne transportin publik te kategorise {kategoria + " dhe zones  " + zona} </h4>;
+    } else {
+        return <h4>Pagese per bileten nga {qytetNisje + " ne " + qytetMberritje} </h4>;
+
+    }
+}
+
+export function PurchaseComponent() {
 
     let query = useQuery();
 
     const mystyle = {
         padding: "10px"
     };
+    let purchaseDesc = showPurchaseDesc(query.get('zona'), query.get('kategoria'), query.get('qytetNisje'), query.get('qytetMberritje'))
 
     return (
         <>
             <Row closeButton>
-                {<h1>Pagese per {query.get('Kategoria') + " " + query.get('Zona')} </h1>}
+                {purchaseDesc}
             </Row>
             <Form>
                 <Form.Label>Detaje dergimi</Form.Label>
                 <Form.Row style={mystyle}>
                     <Col>
-                        {/* <Form.Control value={this.props.obj.Emer} readOnly placeholder="Emer" /> */}
+                        <Form.Control defaultValue={query.get('Emer') || ''} readOnly={query.get('Emer') !== null} placeholder="Emer" />
                     </Col>
                     <Col>
-                        {/* <Form.Control value={this.props.obj.Mbiemer} readOnly placeholder="Mbiemer" /> */}
+                        <Form.Control defaultValue={query.get('Mbiemer') || ''} readOnly={query.get('Mbiemer') !== null} placeholder="Mbiemer" />
                     </Col>
                 </Form.Row>
                 <Form.Row style={mystyle}>
@@ -106,7 +118,7 @@ export function PurchaseComponent(props) {
             </Form>
             <Button variant="primary" >
                 Kryej pagesen
-                          </Button>
+            </Button>
         </>
     )
 

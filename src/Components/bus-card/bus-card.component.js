@@ -4,6 +4,7 @@ import '../Home/home.component.css';
 import { Button } from 'react-bootstrap';
 import { Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
+import { Utils } from '../../Services/utils';
 export class BusCard extends React.Component {
 
     constructor(props) {
@@ -11,8 +12,17 @@ export class BusCard extends React.Component {
         console.log(props);
 
     }
+    disableBtn = true
+    getUrl() {
+        if (this.props.qytetNisje && this.props.qytetMberritje) {
+            this.disableBtn = false
+            return '/bli?' + Utils.seriliseParams({
+                qytetNisje: this.props.qytetNisje,
+                qytetMberritje: this.props.qytetMberritje,
+            })
 
-
+        }
+    }
 
     render() {
         return (
@@ -29,7 +39,7 @@ export class BusCard extends React.Component {
                     <p className='stacioniD'>{this.props.vendMberritje}</p>
                 </Col>
                 <Col lg={2}>
-                    <Button variant="warning" className='bli'><Link style={{ textDecoration: 'none', color: 'inherit' }} to="/bli">Bli Bileten</Link></Button>
+                    <Button variant="warning" className='bli'><Link style={{ textDecoration: 'none', color: 'inherit' }} disable={this.disableBtn} to={this.getUrl()}>Bli Bileten</Link></Button>
                 </Col>
 
             </Row>
