@@ -1,9 +1,9 @@
 import React from 'react';
 import '../../App.css';
 import '../Home/home.component.css';
-import { Button } from 'react-bootstrap';
 import { Row, Col, Form } from 'react-bootstrap';
 import { useLocation } from 'react-router-dom'
+import { CheckOutModal } from '../Modal/modal.component';
 
 
 function useQuery() {
@@ -32,56 +32,56 @@ export function PurchaseComponent() {
 
     return (
         <>
-            <Row closeButton>
+            <Row>
                 {purchaseDesc}
             </Row>
             <Form>
                 <Form.Label>Detaje dergimi</Form.Label>
                 <Form.Row style={mystyle}>
                     <Col>
-                        <Form.Control defaultValue={query.get('Emer') || ''} readOnly={query.get('Emer') !== null} placeholder="Emer" />
+                        <Form.Control defaultValue={query.get('Emer') || ''} readOnly={query.get('Emer') !== null} placeholder="Emer" name="Emer" />
                     </Col>
                     <Col>
-                        <Form.Control defaultValue={query.get('Mbiemer') || ''} readOnly={query.get('Mbiemer') !== null} placeholder="Mbiemer" />
+                        <Form.Control defaultValue={query.get('Mbiemer') || ''} readOnly={query.get('Mbiemer') !== null} placeholder="Mbiemer" name="Mbiemer" />
                     </Col>
                 </Form.Row>
                 <Form.Row style={mystyle}>
                     <Col>
-                        <Form.Control as='select' placeholder="Shteti" >
+                        <Form.Control as='select' placeholder="Shteti" name="Shteti" >
                             <option>Shteti...</option>
                             <option>...</option>
                         </Form.Control>
                     </Col>
                     <Col>
-                        <Form.Control placeholder="Qyteti" />
+                        <Form.Control placeholder="Qyteti" name="Qyteti" />
                     </Col>
                 </Form.Row>
                 <Form.Row style={mystyle}>
                     <Col>
-                        <Form.Control placeholder="Adresa" />
+                        <Form.Control placeholder="Adresa" name="Adresa" />
                     </Col>
                     <Col>
-                        <Form.Control placeholder="Kodi postar" />
+                        <Form.Control placeholder="Kodi postar" name="Posta" />
                     </Col>
                 </Form.Row>
                 <Form.Row style={mystyle}>
                     <Col>
-                        <Form.Control placeholder="Nr. Telefoni" />
+                        <Form.Control placeholder="Nr. Telefoni" name="Tel" />
                     </Col>
                     <Col>
-                        <Form.Control placeholder="Adrese email" />
+                        <Form.Control placeholder="Adrese email" name="Email" />
                     </Col>
                 </Form.Row>
 
                 <Form.Row style={mystyle}>
                     <Form.Label>Detaje Pagese</Form.Label>
-                    <Form.Control as='select' placeholder="Shteti" >
+                    <Form.Control as='select' name="Karta" >
                         <option>Tipi i kartes...</option>
                         <option>Visa</option>
                     </Form.Control>
                 </Form.Row>
                 <Form.Row style={mystyle}>
-                    <Col>      <Form.Control placeholder="Numri i kartes" /></Col>
+                    <Col>      <Form.Control placeholder="Numri i kartes" name="NrKarte" /></Col>
                     <Col>  <Form.Control placeholder="CCV" /></Col>
                 </Form.Row>
 
@@ -116,9 +116,7 @@ export function PurchaseComponent() {
                     </div>
                 </div>
             </Form>
-            <Button variant="primary" >
-                Kryej pagesen
-            </Button>
+            <div className="text-center"><CheckOutModal product={purchaseDesc} /></div>
         </>
     )
 
