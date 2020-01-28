@@ -80,7 +80,7 @@ export class InterUrban extends React.Component {
                             <Col xs lg="2"></Col>
                         </InputGroup>
                     </Row>
-                    {this.state.BusCards.map(el => <BusCard key={el} qytetNisje={el.pro_qytetNisje} qytetMberritje={el.pro_qytetMberritje} vendNisje={el.pro_vendNisje} vendMberritje={el.pro_vendMberritje} />)}
+                    {this.state.BusCards.map(el => <BusCard key={el.produkt_id} qytetNisje={el.pro_qytetNisje} qytetMberritje={el.pro_qytetMberritje} vendNisje={el.pro_vendNisje} vendMberritje={el.pro_vendMberritje} koheNisje={el.pro_koheNisje} koheMberritje={el.pro_koheMberritje} />)}
                 </Jumbotron>
             </Container>
 

@@ -3,12 +3,6 @@ import { Utils } from './utils';
 
 export class UrbanService extends BaseRequest {
 
-    constructor() {
-        super()
-        this.endpoint = 'urban'
-    }
-
-
     async postData(data = {}) {
         // Default options are marked with *
         const response = await fetch(this.url, {
@@ -26,7 +20,7 @@ export class UrbanService extends BaseRequest {
     }
     async getUrbanData(paramsObj) {
         const params = Utils.seriliseParams(paramsObj)
-        const res = await this.getData(params);
+        const res = await this.getData('urban', params);
         return res;
     }
 
