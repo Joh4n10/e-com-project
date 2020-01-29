@@ -1,12 +1,9 @@
 import React from 'react'
-import { InputGroup, FormControl, Form, Container, Row } from 'react-bootstrap'
-import { CheckOutModal } from '../Modal/modal.component';
-import { BaseRequest } from '../../Services/base-request.service';
-import { Col } from 'react-bootstrap'
-import { Button } from 'react-bootstrap'
-
-
+import { InputGroup, FormControl, Form, Container, Row, Button } from 'react-bootstrap'
 import Jumbotron from 'react-bootstrap/Jumbotron'
+import { UrbanService } from '../../Services/urban-handle.service';
+import { Link } from 'react-router-dom';
+import { Utils } from '../../Services/utils';
 export class UrbanTickets extends React.Component {
 
     constructor(props) {
@@ -16,15 +13,14 @@ export class UrbanTickets extends React.Component {
             Mbiemer: '',
             Kategoria: '',
             Zona: '',
-            Cmimi: 0
-
+            Cmimi: 0,
+            purchaseUrl: ''
         }
     }
-    Requests = new BaseRequest()
-
+    Requests = new UrbanService()
     categoryOptions = ['Femije', 'PAK', 'Te rritur', 'Te moshuar']
     zoneOptions = ['Durres', 'Durres-rethina', 'etj']
-
+    disableBtn = true
     // componentDidMount() {
     //     fetch("http://localhost:4000/home")
     //         .then(res => res.json())
@@ -47,21 +43,27 @@ export class UrbanTickets extends React.Component {
     //             }
     //         )
     // }
+    getUrl() {
+        if (this.state.Kategoria && this.state.Zona && this.state.Mbiemer && this.state.Emer) {
+            return '/bli?' + Utils.seriliseParams({
+                zona: this.state.Zona,
+                kategoria: this.state.Kategoria,
+                Emer: this.state.Emer,
+                Mbiemer: this.state.Mbiemer
+            })
 
+        }
+    }
 
     render() {
 
         return (
             < Container fluid>
-                    <Jumbotron  className='jmb2' style={{  background: "rgb(173, 216, 230)" }} >
-                  <Row>
-               
-               <img alt="as" src={require('../../Assets/ticket.png')} style={{ width: "100%" }} />
-          </Row>
-            
-          
+                <Jumbotron className='jmb2' style={{ background: "rgb(173, 216, 230)" }} >
+                    <Row>
+                        <img alt="as" src={require('../../Assets/ticket.png')} style={{ width: "100%" }} />
+                    </Row>
 
-              
                     <Row >
                         <Form style={{ margin: "0 auto" }}>
                             <InputGroup className='busticket3'>
@@ -95,12 +97,14 @@ export class UrbanTickets extends React.Component {
                             </InputGroup>
                         </Form>
                     </Row>
-                    <Row><CheckOutModal obj={this.state} />
+                    <Row>
+                        <Button variant="primary" className='buton1' disable={this.disableBtn}  ><Link disable={this.disableBtn} style={{ textDecoration: 'none', color: 'inherit' }} to={this.getUrl()}> Bej porosi</Link>
+                        </Button>
+
                     </Row>
                 </Jumbotron>
-                <h1 className='lol'  style={{ textAlign: "center " }}>Cooming Soon</h1>
-            <p className='lol1' style={{ textAlign: "center " }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
-            
+                <h1 className='lol' style={{ textAlign: "center " }}>Cooming Soon</h1>
+                <p className='lol1' style={{ textAlign: "center " }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </ Container >
         );
     }
@@ -110,7 +114,7 @@ export class UrbanTickets extends React.Component {
         let StateValue = event.target.value
         this.setState({ [StateName]: StateValue }, () => {
             if (this.state.Kategoria && this.state.Zona) {
-                this.Requests.getData({
+                this.Requests.getUrbanData({
                     zona: this.state.Zona,
                     kategoria: this.state.Kategoria
                 }).then((res, rej) => {

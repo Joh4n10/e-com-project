@@ -1,8 +1,8 @@
-export class BaseRequest {
+import { BaseRequest } from './base-request.service';
+import { Utils } from './utils';
 
-    // constructor() { }
+export class InterUrbanService extends BaseRequest {
 
-    url = "http://localhost:4000/";
     async postData(data = {}) {
         // Default options are marked with *
         const response = await fetch(this.url, {
@@ -18,9 +18,20 @@ export class BaseRequest {
         });
         return await response.json(); // parses JSON response into native JavaScript objects
     }
-    async getData(endpoint, params) {
-        const res = await fetch(this.url + endpoint + "?" + params);
-        return res.json();
+    async getDeparturesData() {
+        const params = ''
+        const res = await this.getData('inter-urban/departures', params);
+        return res;
+    }
+    async getArrivalsData() {
+        const params = ''
+        const res = await this.getData('inter-urban/arrivals', params);
+        return res;
+    }
+    async getBusList(paramsObj) {
+        const params = Utils.seriliseParams(paramsObj)
+        const res = await this.getData('inter-urban/list', params);
+        return res;
     }
 
 }
