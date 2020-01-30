@@ -1,9 +1,12 @@
 import React from 'react'
-import { InputGroup, FormControl, Form, Container, Row, Button } from 'react-bootstrap'
+import { InputGroup, FormControl, Form, Container, Row, Button, Col } from 'react-bootstrap'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import { UrbanService } from '../../Services/urban-handle.service';
 import { Link } from 'react-router-dom';
 import { Utils } from '../../Services/utils';
+import { Table } from 'react-bootstrap';
+import '../Inter-urban/inter-urban.component.css';
+
 export class UrbanTickets extends React.Component {
 
     constructor(props) {
@@ -103,8 +106,67 @@ export class UrbanTickets extends React.Component {
 
                     </Row>
                 </Jumbotron>
-                <h1 className='lol' style={{ textAlign: "center " }}>Cooming Soon</h1>
-                <p className='lol1' style={{ textAlign: "center " }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <h4 className='' style={{ textAlign: "center " }}>INTERVALET DHE NUMRI I AUTOBUZAVE TE LINJAVE PER TRANSPORTIN QYTETAS URBAN
+</h4>
+<h4 className='lol' style={{ textAlign: "center " }}>Bashkia Durres</h4>
+               <Row>
+                   <Col><Table responsive>
+  <thead className='tab'>
+    <tr>
+      <th>EMERTIMI I LINJES</th>
+      <th>FIRMA  OPERUESE</th>
+      <th>INTERVALET KOHORE</th>
+      <th>NUMRI  I MJETEVE</th>
+    </tr>
+  </thead>
+  <tbody className='linjat'>
+    <tr>
+      <td>Durres-Spitalle-Durres</td>
+      <td>IRI TRANS</td>
+      <td>8 minuta</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>Durres-Nishtulla-Durres</td>
+      <td>IRI TRANS</td>
+      <td>7.5 minuta</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>Durres-Currila-Durres</td>
+      <td>IRI TRANS</td>
+      <td>30 minuta</td>
+      <td>3</td>
+    </tr>
+      <tr>
+      <td>Durres-Universiteti A.Moisiu-Durres</td>
+      <td>IRI TRANS</td>
+      <td>15 minuta</td>
+      <td>4</td>
+    </tr>
+         <tr>
+      <td>Durres-Plepa-Durres</td>
+      <td>MAREN BUSS</td>
+      <td>6 minuta</td>
+      <td>12</td>
+    </tr>
+         <tr>
+      <td>Durres-Unaze-Kenete-Plepa-Durres</td>
+      <td>MAREN BUSS</td>
+      <td>20 minuta</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+  </Table></Col>
+</Row>
+<Row>
+          <Col style={{ textAlign: "center " }}>
+          <Link disable={this.disableBtn} >Shiko me shume</Link>
+          </Col>              
+ </Row>
+ <p></p>
+
+          
             </ Container >
         );
     }
