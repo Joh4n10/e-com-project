@@ -82,6 +82,47 @@ export class InterUrban extends React.Component {
                     </Row>
                     {this.state.BusCards.map(el => <BusCard key={el.produkt_id} qytetNisje={el.pro_qytetNisje} qytetMberritje={el.pro_qytetMberritje} vendNisje={el.pro_vendNisje} vendMberritje={el.pro_vendMberritje} koheNisje={el.pro_koheNisje} koheMberritje={el.pro_koheMberritje} />)}
                 </Jumbotron>
+
+<div>
+<h1 className='titull'>Partnerët tanë</h1>
+<p></p>
+
+<Container>
+<Row >
+    
+<Col xs lg="2"><img alt="as" src={require('../../Assets/alvavel.jpg')} style={{ width: "70%" }} />
+</Col>
+<Col xs lg="2"><img alt="as" src={require('../../Assets/albatrans.jpg')} style={{ width: "70%" }} />
+</Col>
+<Col xs lg="2"><img alt="as" src={require('../../Assets/albtrans.jpg')} style={{ width: "70%" }} />
+</Col>
+<Col xs lg="2"><img alt="as" src={require('../../Assets/ardit.png')} style={{ width: "70%" }} />
+</Col>
+<Col xs lg="2"><img alt="as" src={require('../../Assets/arjani.png')} style={{ width: "70%" }} />
+</Col>
+<Col xs lg="2"><img alt="as" src={require('../../Assets/expressTours.jpg')} style={{ width: "70%" }} />
+</Col>
+</Row>
+<p></p>
+
+<Row >
+<Col xs lg="2"><img alt="as" src={require('../../Assets/ardit.png')} style={{ width: "70%" }} />
+</Col>
+<Col xs lg="2"><img alt="as" src={require('../../Assets/kei.png')} style={{ width: "70%" }} />
+</Col>
+<Col xs lg="2"><img alt="as" src={require('../../Assets/maba_viaggi.png')} style={{ width: "70%" }} />
+</Col>
+<Col xs lg="2"><img alt="as" src={require('../../Assets/osumi_travel.jpg')} style={{ width: "70%" }} />
+</Col>
+<Col xs lg="2"><img alt="as" src={require('../../Assets/komatas_tours.png')} style={{ width: "70%" }} />
+</Col>
+<Col xs lg="2"><img alt="as" src={require('../../Assets/logo_tirana_metropol.png')} style={{ width: "70%" }} />
+</Col>
+</Row>
+<p></p>
+</Container>
+</div>
+
             </Container>
 
         )
