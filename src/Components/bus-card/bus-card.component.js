@@ -39,7 +39,7 @@ export class BusCard extends React.Component {
                     <p className='stacioniD'>{this.props.vendMberritje}</p>
                 </Col>
                 <Col lg={2}>
-                    <Button variant="warning" className='bli'><Link style={{ textDecoration: 'none', color: 'inherit' }} disable={this.disableBtn} to={this.getUrl()}>Bli Bileten</Link></Button>
+                    <Button variant="warning" className='bli'><Link style={{ textDecoration: 'none', color: 'inherit' }} disable={this.disableBtn.toString()} to={this.getUrl()}>Bli Bileten</Link></Button>
                 </Col>
 
             </Row>

@@ -67,7 +67,8 @@ export class Footer extends React.Component {
                         <div className="row">
                             <div className="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
                                 <p><u><a href="/">busticket.al</a></u> - Projekt i krijuar nga studente te UAMD - FTI per qellime akademike ne kursin E-COMMERCE & E-BUSINESS</p>
-                                <p className="h6">All right Reversed.<p>Johan Dhana & Erblin Isaku</p></p>
+                                <p className="h6">All right Reversed.</p>
+                                <p>Johan Dhana & Erblin Isaku</p>
                             </div>
                         </div>
                     </div>

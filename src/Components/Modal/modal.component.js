@@ -10,7 +10,9 @@ export function CheckOutModal(props) {
     console.log(props)
     return (
         <>
-            <Button variant="primary" className='buton1' style={{ margin: "0 auto" }} onClick={handleShow} >
+            <Button variant="primary" className='buton1' style={{
+                margin: "10px auto"
+            }} onClick={handleShow} >
                 Bej pagesen
             </Button>
             <Modal show={show} onHide={handleClose}>

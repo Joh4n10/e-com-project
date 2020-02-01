@@ -32,7 +32,7 @@ export function PurchaseComponent() {
 
     return (
         <>
-            <Row>
+            <Row className="m-0">
                 {purchaseDesc}
             </Row>
             <Form>
