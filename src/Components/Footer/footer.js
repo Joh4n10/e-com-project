@@ -22,10 +22,9 @@ export class Footer extends React.Component {
                                 <h5>Informacione</h5>
                                 <ul className="list-unstyled quick-links">
                                     <li><a href="../"><i className="fa fa-angle-double-right"></i>Home</a></li>
+                                    <li><a href="about"><i className="fa fa-angle-double-right"></i>Rreth Nesh</a></li>
                                     <li><a href="urban"><i className="fa fa-angle-double-right"></i>Transport Urban</a></li>
                                     <li><a href="inter-urban"><i className="fa fa-angle-double-right"></i>Transport Interurban</a></li>
-                                    {/* <li><a href="test"><i className="fa fa-angle-double-right"></i>Get Started</a></li>
-                                    <li><a href="test"><i className="fa fa-angle-double-right"></i>Videos</a></li> */}
 
                                 </ul>
                             </div>
@@ -54,9 +53,7 @@ export class Footer extends React.Component {
                             </div>
                         </div>
                         <div className="row">
-                        <div className="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
-                            <img alt="as" src={require('../../Assets/bus.png')} style={{ width: "8%" }} />
-</div>
+                  
                             <div className="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
                                 <ul className="list-unstyled list-inline social text-center">
                                     <li className="list-inline-item"><a href="test"><i className="fa fa-facebook"></i></a></li>

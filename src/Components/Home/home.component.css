@@ -6,7 +6,6 @@
     border-radius: 0;
     height: 100vh;
 
-
 }
 .busticket {
     color: white;
@@ -136,4 +135,3 @@ padding: 60px;
   background: linear-gradient(45deg, rgba(255,193,7,1) 0%, rgba(255,87,34,1) 100%);
   box-shadow: 0 0 20px 0 rgba(0,0,0,.4);
 }
-

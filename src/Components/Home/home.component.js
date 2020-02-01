@@ -15,6 +15,9 @@ export class Home extends React.Component {
         return (
             <Container fluid >
                 <Jumbotron className='jmb'>
+                <div style = {{textAlign: "center"}}>
+                <img alt="as" src={require('../../Assets/bus.png')} style={{ width: "8%" }} />
+                </div>
                     <h1 className='busticket'>BUS TICKET</h1>
                     <h3 className="busticket1"> Rezervoni dhe blini online biletën tuaj të autobuzit shumë shpejtë dhe thjeshtë, kudo ku ndodheni në Shqipëri.</h3>
                     <Row className='buton'>
