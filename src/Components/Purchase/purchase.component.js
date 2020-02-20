@@ -49,6 +49,8 @@ export function PurchaseComponent() {
                     <Col>
                         <Form.Control as='select' placeholder="Shteti" name="Shteti" >
                             <option>Shteti...</option>
+                            <option>Shqiperi</option>
+                            <option>Kosove</option>
                             <option>...</option>
                         </Form.Control>
                     </Col>
@@ -78,6 +80,7 @@ export function PurchaseComponent() {
                     <Form.Control as='select' name="Karta" >
                         <option>Tipi i kartes...</option>
                         <option>Visa</option>
+                        <option>Mastercard</option>
                     </Form.Control>
                 </Form.Row>
                 <Form.Row style={mystyle}>
