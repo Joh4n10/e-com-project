@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../App.css';
 import '../Home/home.component.css';
-import { Row, Col, Form } from 'react-bootstrap';
+import { Row, Col, Form, Container } from 'react-bootstrap';
 import { useLocation } from 'react-router-dom'
 import { CheckOutModal } from '../Modal/modal.component';
 
@@ -31,7 +31,7 @@ export function PurchaseComponent() {
     let purchaseDesc = showPurchaseDesc(query.get('zona'), query.get('kategoria'), query.get('qytetNisje'), query.get('qytetMberritje'))
 
     return (
-        <>
+        <Container>
             <Row className="m-0">
                 {purchaseDesc}
             </Row>
@@ -120,7 +120,7 @@ export function PurchaseComponent() {
                 </div>
             </Form>
             <div className="text-center"><CheckOutModal product={purchaseDesc} /></div>
-        </>
+        </Container>
     )
 
 
